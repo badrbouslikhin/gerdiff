@@ -98,7 +98,9 @@ def compare_pngs(png1_path, png2_path, diff_path):
 
 def compare_png_folders(folder1_path, folder2_path, diff_folder_path):
     image_files_folder1 = [f for f in folder1_path.iterdir() if f.is_file()]
+    image_files_folder1.sort()
     image_files_folder2 = [f for f in folder2_path.iterdir() if f.is_file()]
+    image_files_folder2.sort()
     diff_folder_path = create_output_folder(diff_folder_path)
     for (file1, file2) in zip(image_files_folder1, image_files_folder2):
         if file1.name == file2.name:
