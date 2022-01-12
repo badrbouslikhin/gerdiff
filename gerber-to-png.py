@@ -24,7 +24,7 @@ def list_gerber_files(gerber_path):
         ".drl",
     ]
     gerber_files = [
-        f for f in gerber_path.iterdir() if f.is_file() if f.suffix in gerber_extensions
+        f for f in gerber_path.iterdir() if f.is_file() if f.suffix.lower() in gerber_extensions
     ]
     return gerber_files
 
